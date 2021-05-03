@@ -11,8 +11,8 @@
         </div>
 
         <div class="col-4">
-          <select class="form-select">
-            <option selected>Show all</option>
+          <select class="form-select" v-model="select" @change="$emit('sort', select)">
+            <option value="">Show all</option>
             <option value="false">Show Uncompleted</option>
             <option value="true">Show Completed</option>
           </select>
@@ -27,7 +27,8 @@
 export default {
   data() {
     return {
-      title: ''
+      title: '',
+      select: ''
     }
   }, 
   methods: {

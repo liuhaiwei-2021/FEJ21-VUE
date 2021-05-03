@@ -1,14 +1,29 @@
 {
   "todos": [
     {
-      "id": 3,
-      "title": "Todo item three",
-      "completed": false
+      "title": "städa kontoret",
+      "completed": false,
+      "id": 5
     },
     {
-      "id": 4,
-      "title": "Todo item four",
-      "completed": true
+      "title": "tvätta bilen",
+      "completed": true,
+      "id": 6
+    },
+    {
+      "title": "handla",
+      "completed": true,
+      "id": 7
+    },
+    {
+      "title": "klippa gräsmattan",
+      "completed": false,
+      "id": 8
+    },
+    {
+      "title": "äta mat",
+      "completed": false,
+      "id": 9
     }
   ]
 }

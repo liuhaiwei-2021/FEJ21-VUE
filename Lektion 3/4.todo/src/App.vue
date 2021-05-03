@@ -1,10 +1,10 @@
 <template>
   <div class="bg-light">
     <Navbar />
-    <AddTodo @addTodo="add" />
+    <AddTodo @addTodo="add" @sort="sortTodos" />
 
     <div class="container py-5">
-      <TodosList :todos="todos" @delete-todo="deleteTodo" @toggle-completed="toggle" />
+      <TodosList :value="sort" :todos="todos" @delete-todo="deleteTodo" @toggle-completed="toggle" />
     </div>
 
   </div>
@@ -26,10 +26,23 @@ export default {
   },
   data() {
     return {
-      todos: []
+      todos: [],
+      sort: ''
     }
   },
   methods: {
+    sortTodos(val) {
+      switch(val) {
+        case 'false':
+          this.sort = false
+          break
+        case 'true':
+          this.sort = true
+          break
+        default:
+          this.sort = ''
+      }
+    },
     async getTodos() {
       const res = await axios.get('http://localhost:3000/todos')
       this.todos = res.data
